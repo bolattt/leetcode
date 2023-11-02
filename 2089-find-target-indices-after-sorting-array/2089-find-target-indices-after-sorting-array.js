@@ -7,13 +7,12 @@ var targetIndices = function(nums, target) {
     nums.sort((a,b) => a - b)
   
     let left = 0;
-    let mid; 
     let right = nums.length - 1;
     const ans = []
 
 
     while (left <= right) { 
-        mid = Math.floor( (left + right) / 2)
+        const mid = Math.floor( (left + right) / 2)
         const midVal = nums[mid]
         
         if(midVal == target) { 
