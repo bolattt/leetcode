@@ -5,8 +5,7 @@
  */
 var targetIndices = function(nums, target) {
     nums.sort((a,b) => a - b)
-    //          | 
-    // [1,2,2,3,5]
+  
     let left = 0;
     let mid; 
     let right = nums.length - 1;
