@@ -4,12 +4,14 @@
  */
 var numIdenticalPairs = function(nums) {
     let count = 0; 
-    let seen = { };
+    const hash = new Map()
     for(let num of nums) { 
-        if(!seen[num]) seen[num] = 1 
-        else { 
-            count += seen[num]
-            seen[num]++;
+      if(!hash.has(num)) { 
+         hash.set(num,1) 
+      }
+      else { 
+          count += hash.get(num)
+          hash.set(num, hash.get(num) + 1 ) 
         }
     }
     return count 
