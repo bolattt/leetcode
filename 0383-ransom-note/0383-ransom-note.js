@@ -4,16 +4,14 @@
  * @return {boolean}
  */
 var canConstruct = function(ransomNote, magazine) {
- let alphabets =  new Array(26)
+ let alphabets =  {}
   for(let ch of magazine) { 
-    const index = ch.charCodeAt() - 97  
-    alphabets[index] = (alphabets[index] || 0)  + 1 
+    alphabets[ch] = (alphabets[ch]  || 0) + 1 
   }
     
   for(let ch of ransomNote)  { 
-     const index = ch.charCodeAt() - 97  
-     alphabets[index] = ( alphabets[index] || 0) - 1
-     if(alphabets[index] < 0) return false
+     alphabets[ch] = (alphabets[ch]  || 0 ) - 1 
+      if(alphabets[ch] < 0) return false 
       
  }
     return true 
