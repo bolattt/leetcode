@@ -37,7 +37,6 @@ var findInMountainArray = function(target, mountainArr) {
     }     
     // right is peak index 
     peakIndex = right 
-    console.log({left,right})
     
     // get target index on the left of peak 
     left = 0; 
@@ -49,11 +48,12 @@ var findInMountainArray = function(target, mountainArr) {
         else if(midVal < target) left = mid + 1 
         else right = mid - 1 
     }
-    console.log({right})
-    
+
+    // if it's not found on left, find target index on right side of peak 
     left = peakIndex 
     right = right = mountainArr.length() - 1
-        while(left <= right) { 
+
+    while(left <= right) { 
         const mid = Math.floor((left + right) / 2 ) 
         const midVal = mountainArr.get(mid) 
         
@@ -63,6 +63,7 @@ var findInMountainArray = function(target, mountainArr) {
     }
     return -1 
 };
+
 
 // [1,2,3,4,5,4,3,2,1] 
 // left 0, right 6, mid 3, midVal 4
