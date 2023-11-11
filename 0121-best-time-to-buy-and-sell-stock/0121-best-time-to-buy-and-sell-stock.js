@@ -10,11 +10,11 @@ var maxProfit = function(prices) {
     while(right < prices.length) { 
         if( prices[right] < prices[left]) { 
              left = right 
-        }
-        
-        let profit = prices[right] -  prices[left] 
-        if(profit > maxProfit) { 
-            maxProfit = profit
+        } else { 
+            let profit = prices[right] -  prices[left] 
+            if(profit > maxProfit) { 
+                maxProfit = profit
+            }
         }
         right++;
     }
