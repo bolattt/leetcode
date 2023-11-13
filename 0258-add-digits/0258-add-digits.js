@@ -5,6 +5,7 @@
     
  */
 var addDigits = function(num) {
+    if(num < 9 ) return num 
     
     let sum = 0 
     
