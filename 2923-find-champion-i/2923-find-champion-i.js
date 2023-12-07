@@ -11,10 +11,8 @@ var findChampion = function(grid) {
         for(let col of grid[row]) { 
             if(col === 1) strength++      
         }
-        console.log(strength)
         if(strength > maxStrength) { 
             maxStrength = strength
-            console.log({row})
             winningTeamIndex = row
         }
     }
