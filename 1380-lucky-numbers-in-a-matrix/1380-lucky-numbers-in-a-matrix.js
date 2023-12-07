@@ -4,10 +4,9 @@
     smallest in its row , largest in its column
  */
 var luckyNumbers  = function(m) {
-    let minRowEl = []
-    let maxColEl = []
     let res = []
     let numSet = new Set();
+    // get the min from rows 
     for(let row = 0; row < m.length; row++) { 
         let minEl = Infinity
         for(let col = 0; col < m[0].length; col++) {
@@ -16,10 +15,9 @@ var luckyNumbers  = function(m) {
                 minEl = curEl
             }
         }
-        minRowEl.push(minEl)
         numSet.add(minEl)
     }
-    
+    // get the max from cols, if it's already in set, add it to res
     for(let col = 0; col < m[0].length; col++) { 
         let maxEl = 0
         for(let row = 0; row < m.length; row++) { 
@@ -28,12 +26,10 @@ var luckyNumbers  = function(m) {
             maxEl = curEl
            }
         }
-        maxColEl.push(maxEl)
         if(numSet.has(maxEl)) { 
             res.push(maxEl)
         }
     }
-    console.log(minRowEl,maxColEl)
     return res
 };
 
