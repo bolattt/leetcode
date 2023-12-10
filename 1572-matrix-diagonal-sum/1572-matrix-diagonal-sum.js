@@ -4,11 +4,14 @@
  */
 var diagonalSum = function(mat) {
     let sum = 0
+ 
     for(let row = 0; row < mat.length; row++) { 
-        for(let col = 0; col < mat.length; col++) { 
-            if(row == col) sum += mat[row][col]
-            else if(row + col === mat.length - 1) sum += mat[row][col]
-        }
-    }
-    return sum
+        let col = mat.length - row - 1 
+        sum += mat[row][row]
+        sum += mat[row][col]
+     }
+
+    let center = Math.floor(mat.length / 2)
+    if(mat.length % 2 != 0) sum -= mat[center][center]
+    return sum 
 };
