@@ -17,11 +17,9 @@ var numSpecial = function(mat) {
         
         let countOfOneInCol = 0
         if(oneCountInRow == 1) { 
-            console.log({colIndex})
             for(let i = 0; i < mat.length; i++) { 
                if(mat[i][colIndex] == 1) { 
                 countOfOneInCol++
-                   console.log({countOfOneInCol})
                    if(countOfOneInCol > 1) break 
                }
             }
