@@ -6,8 +6,8 @@ var onesMinusZeros = function(grid) {
     const diff = Array.from({length:grid.length}, () => Array(grid[0].length)) 
     const rowDiff = []
     const colDiff = []
-    console.log(diff)
     
+    // get 1 and 0 count of rows, subtract counts, store in rowDiff
     for(let i = 0; i < grid.length; i++)  {
         let oneRow = 0, zeroRow = 0
         for(let j = 0; j < grid[0].length; j++) { 
@@ -17,6 +17,7 @@ var onesMinusZeros = function(grid) {
         rowDiff.push(oneRow - zeroRow)
     }
     
+    // get count of 1 and 0, subtract counts, store in colDiff 
     for(let col = 0; col < grid[0].length; col++) {
         let zeroCol = 0, oneCol = 0
         for(let row = 0; row < grid.length; row++) { 
@@ -25,8 +26,8 @@ var onesMinusZeros = function(grid) {
         }
         colDiff.push(oneCol - zeroCol)
     }
-    console.log(rowDiff,colDiff)
     
+    // update result diff array
     for(let row = 0; row < diff.length; row++){ 
         for(let col = 0; col < diff[0].length; col++) {
             diff[row][col] = rowDiff[row] + colDiff[col]   
