@@ -32,17 +32,14 @@ var countCharacters = function(words, chars) {
     for(let ch of chars) { 
         charsCount[ch] = (charsCount[ch] || 0) + 1 
     }
-    console.log(charsCount)
-    
-    
-    // 2. 
-    
+     
+    // 2.     
     for(let word of words) { 
         const wordChCount = { }
         for(let ch of word) { 
             wordChCount[ch] = (wordChCount[ch] || 0) + 1 
         }
-        console.log(wordChCount)
+
         // 3. 
         let canBeFormed = true
         for(let key in wordChCount) { 
@@ -53,9 +50,9 @@ var countCharacters = function(words, chars) {
         }
         
         if(canBeFormed) { 
-            console.log('canbeformed' ,word)
              length += word.length
         }
+ 
     }
     
     return length 
