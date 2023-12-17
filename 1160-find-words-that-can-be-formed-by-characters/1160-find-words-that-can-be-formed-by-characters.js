@@ -24,37 +24,37 @@
     return length 
     
  */
-var countCharacters = function(words, chars) {
-    let length = 0; 
-    
+var countCharacters = function (words, chars) {
+    let length = 0;
+
     // 1. 
-    const charsCount = { } 
-    for(let ch of chars) { 
-        charsCount[ch] = (charsCount[ch] || 0) + 1 
+    const charsCount = {}
+    for (let ch of chars) {
+        charsCount[ch] = (charsCount[ch] || 0) + 1
     }
-     
+
     // 2.     
-    for(let word of words) { 
-        const wordChCount = { }
-        for(let ch of word) { 
-            wordChCount[ch] = (wordChCount[ch] || 0) + 1 
+    for (let word of words) {
+        const wordChCount = {}
+        for (let ch of word) {
+            wordChCount[ch] = (wordChCount[ch] || 0) + 1
         }
 
         // 3. 
         let canBeFormed = true
-        for(let key in wordChCount) { 
-            if(charsCount[key] == undefined || charsCount[key] < wordChCount[key]) {
+        for (let key in wordChCount) {
+            if (charsCount[key] == undefined || charsCount[key] < wordChCount[key]) {
                 canBeFormed = false
                 break
-            }      
+            }
         }
-        
-        if(canBeFormed) { 
-             length += word.length
+
+        if (canBeFormed) {
+            length += word.length
         }
- 
+
     }
-    
-    return length 
-     
+
+    return length
+
 };
