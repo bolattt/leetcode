@@ -28,9 +28,7 @@ var maxProductDifference = function(nums) {
             low2 = num 
         }
         
-         console.log({num,high1,high2,low1,low2})
     }
     
-    console.log(high1,high2,low1,low2)
     return high1 * high2 - low1 * low2
 };
