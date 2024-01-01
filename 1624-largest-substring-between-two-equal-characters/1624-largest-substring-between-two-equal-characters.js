@@ -4,16 +4,16 @@
  */
 var maxLengthBetweenEqualCharacters = function(s) {
     let chMap = new Map() 
-    let longest = -1
+    let longestSubStr = -1
   
     for(let i = 0; i < s.length; i++) { 
         let cur = s[i]
         if(!chMap.has(cur)) { 
             chMap.set(cur,i)
         } else { 
-            let diff = i - chMap.get(cur) - 1
-            if(diff > longest) longest = diff
+            let curSubStr = i - chMap.get(cur) - 1
+            if(curSubStr > longestSubStr) longestSubStr = curSubStr
         }
     }
-    return longest
+    return longestSubStr
 };
