@@ -4,7 +4,6 @@
  */
 var maxLengthBetweenEqualCharacters = function(s) {
     let chMap = new Map() 
-    let subStr = -1
     let longest = -1
   
     for(let i = 0; i < s.length; i++) { 
@@ -16,6 +15,5 @@ var maxLengthBetweenEqualCharacters = function(s) {
             if(diff > longest) longest = diff
         }
     }
-    console.log(chMap)
     return longest
 };
